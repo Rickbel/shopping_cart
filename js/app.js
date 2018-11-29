@@ -1,3 +1,6 @@
+
+
+
 // show cart
 
 (function () {
@@ -64,7 +67,6 @@ btn.addEventListener("click", function(event) {
         const total = document.querySelector(".cart-total-container");
         
         cart.insertBefore(cartItem, total);
-        alert("se agrego al carro");
           showTotals();
           }
        });
@@ -78,7 +80,7 @@ btn.addEventListener("click", function(event) {
         items.forEach(function(item){
             total.push(parseFloat(item.textContent));
         });
-          //console.log(total);
+
 
           const totalMoney = total.reduce(function(total,item){
               total += item;
@@ -91,3 +93,20 @@ btn.addEventListener("click", function(event) {
           document.getElementById("item-count").textContent = total.length;
       }
 })();
+
+
+
+
+
+
+function removeCart() {
+    
+}
+
+function finishCart() {
+    alert("compra exitosa");
+}
+
+removeCart();
+
+
