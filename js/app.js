@@ -100,7 +100,9 @@ btn.addEventListener("click", function(event) {
 
 
 function removeCart() {
-    
+    var r = document.getElementById("cart-info")
+    var list = document.getElementsByTagName("div");
+    r.removeChild(list,item(0));
 }
 
 function finishCart() {
