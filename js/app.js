@@ -61,14 +61,33 @@ btn.addEventListener("click", function(event) {
                     `;
         //select cart
         const cart = document.getElementById("cart");
-        const total = document.queryCommandEnabled(".cart-total-container");
+        const total = document.querySelector(".cart-total-container");
         
         cart.insertBefore(cartItem, total);
         alert("se agrego al carro");
-          
+          showTotals();
           }
        });
       });
       
-      
+      //show totals
+      function showTotals(){
+        const total = [];
+        const items = document.querySelectorAll(".cart-item-price");
+
+        items.forEach(function(item){
+            total.push(parseFloat(item.textContent));
+        });
+          //console.log(total);
+
+          const totalMoney = total.reduce(function(total,item){
+              total += item;
+            return total;
+          },0)
+          const finalMoney = totalMoney.toFixed(2);
+          
+          document.getElementById("cart-total").textContent=finalMoney;
+          document.querySelector(".item-total").textContent = finalMoney;
+          document.getElementById("item-count").textContent = total.length;
+      }
 })();
